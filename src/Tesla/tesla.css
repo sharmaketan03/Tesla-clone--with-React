@@ -37,7 +37,7 @@ a{
 }
 li{
     font-weight: 500;
-    font-size: large;
+    font-size: 18px;
    
     padding:10px;
 }
@@ -140,4 +140,10 @@ button{
 .menu{
     font-weight: 700;
   
+}
+
+@media screen and (max-width:1050px){
+  li{
+    font-size: 16px;
+  }
 }

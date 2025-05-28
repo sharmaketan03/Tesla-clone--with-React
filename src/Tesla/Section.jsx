@@ -9,8 +9,10 @@ function Section(props) {
       <p>{props.paragraph}</p>
     </div>
     <div className='bottom'>
-         <button >{props.buttonleft}</button>
-         <button >{props.buttonright}</button>
+        { props.buttonright?( <button >{props.buttonright}</button>):""
+
+        } <button >{props.buttonleft}</button>
+        
     {props. Dropdownarrow? <img src={props.Dropdownarrow} alt="" className="downarrow"/>:""}
     </div>
    </div>
