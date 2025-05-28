@@ -3,22 +3,30 @@ import LOGO from "../assets/images/logo.svg"
 import { ImCross } from "react-icons/im";
 function Header() {
   const [value,setvalue]=useState(false)
+  const [animation,setanimation]=useState("")
 
   function click(e){
     e.preventDefault()
 
     if(value==true){
-       setvalue(false)
+       setanimation("slide-out")
+      setTimeout(()=>{
+            setvalue(false)
+      },300)
+      
     }else{
+      setanimation("slide-in")
       setvalue(true)
+      // setanimation("menu-slide-in")
     }
   }
 
   return (
+    <>
    <nav>
       <img src={LOGO} alt="" />
 
-      <ul>
+      <ul >
         <li><a href="#">Model 3</a></li>
         <li><a href="#">Model S</a></li>
         <li><a href="#">Model X</a></li>
@@ -28,15 +36,18 @@ function Header() {
         <li><a href="#">Solar Roof</a></li>
       </ul>
 
-      <ul>
+      <ul >
         <li><a href="#">Shop</a></li>
         <li><a href="#">Account</a></li>
         <li><a href="#" onClick={click} className="menu">Menu</a></li>
       </ul>
       
-   {value && ( <div id="MenuBar"  >
-      <ImCross className="icons" onClick={click} id="crossicons"/>
-       <ul className="rightbox"  >
+    </nav>
+   {value && ( <div id="MenuBar"  className={animation} >
+       {/* <button>&times;</button> */}
+       <ul className={`rightbox ${animation}` }  >
+      <ImCross className="icons " onClick={click} id="crossicons"/>
+     
 
         <li><a href="#">Model 3</a></li>
         <li><a href="#">Model S</a></li>
@@ -52,10 +63,10 @@ function Header() {
         <li><a href="#">Power Wall</a></li>
         <li><a href="#">Commercial Energy</a></li>
       </ul>
-     
      </div>
     )}
-    </nav>
+    </>
+
     
     
   )

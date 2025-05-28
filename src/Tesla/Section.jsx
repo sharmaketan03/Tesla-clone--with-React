@@ -11,8 +11,8 @@ function Section(props) {
     <div className='bottom'>
          <button >{props.buttonleft}</button>
          <button >{props.buttonright}</button>
-    </div>
     {props. Dropdownarrow? <img src={props.Dropdownarrow} alt="" className="downarrow"/>:""}
+    </div>
    </div>
    
    </>

@@ -9,16 +9,20 @@ nav{
     justify-content: space-between;
     position:fixed;
     top: 0px;
-    width:100%;
+    width: 100%;
     padding:0 20px;
+    z-index: 1;
 }
 .icons{
     color: black;
-right: 10px;
     font-size: 20px;
     width: 50px;
     z-index: 50;
-    position: fixed;
+    /* position: fixed; */
+    /* margin-left:12rem; */
+    position: absolute;
+    right:0;
+    /* animation: all 0.5s linear; */
 }
 ul{
     display: flex;
@@ -38,15 +42,49 @@ li{
     padding:10px;
 }
 .rightbox{
-    display:block;
-    position: absolute;
+    /* display:block; */
+    position: fixed;
     top:0;
-    right:0;
+    right: 0;
    flex-direction: column;
     width:250px;
     height:100vh;
     background-color: white;
-    padding:3rem 0 0 1rem;
+    padding:2rem 0 0 1rem;
+    /* animation: all 0.5s linear; */
+    z-index: 10;
+  }
+  /* @keyframes all {
+     0%{
+        right:-250px;
+
+     }
+     100%{
+        right:0px;
+     }
+    
+  } */
+.slide-in{
+    animation: in 0.5s linear;
+}
+@keyframes in {
+    0%{
+       right:-250px;
+    }
+    100%{
+        right:0;
+    }
+}
+.slide-out{
+    animation: out 0.5s linear;
+}
+@keyframes out {
+     0%{
+    right:0px;
+   }
+   100%{
+    right:-250px;
+   }
   
     
 }
@@ -72,15 +110,26 @@ li{
    bottom:150px;
    left: */
    text-align: center;
-   margin-bottom: 5rem;
+   margin-bottom: 8rem;
+   position: relative;
 }
 .downarrow{
     position: absolute;
+    top:50px;
     bottom:0;
-    
+    left: 212px;
     width:70px;
     height:70px;
-
+    animation: blink 1s forwards infinite;
+    margin-top: 1rem;
+}
+@keyframes blink {
+  from{
+      top:10px;
+  }
+  bottom{
+      bottom:300px;
+  }
 }
 button{
     padding:0.4rem  80px;
@@ -90,4 +139,5 @@ button{
 }
 .menu{
     font-weight: 700;
+  
 }
